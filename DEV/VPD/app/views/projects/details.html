@@ -1,0 +1,117 @@
+﻿<div class="portlet light grey-carrara">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="icon-book-open"></i>
+            <span class="caption-subject bold uppercase"> {{project.nome}}</span>
+            <span class="caption-helper">detalhes</span>
+        </div>
+        <div class="actions">
+            <a ng-click="encerrar()" class="btn btn-circle red" ng-hide="project.status == 'Encerrado'">
+                <i class="fa fa-times"></i> Encerrar
+            </a>
+            <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="fullscreen" title="fullscreen"> </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="dashboard-stat2 up">
+                    <div class="display">
+                        <div class="number">
+                            <h3 class="font-green-jungle">
+                                <small class="font-green-jungle">R$</small>
+                                <span>{{project.totalRecebido}}</span>
+                            </h3>
+                            <small class="font-green-meadow">TOTAL RECEBIDO</small>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-arrow-up font-green-jungle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="dashboard-stat2 up">
+                    <div class="display">
+                        <div class="number">
+                            <h3 class="font-green-jungle">
+                                <small class="font-green-jungle">R$</small>
+                                <span>{{project.saldoReceber}}</span>
+                            </h3>
+                            <small class="font-green-meadow">SALDO A RECEBER</small>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-arrow-up font-green-jungle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="dashboard-stat2 up">
+                    <div class="display">
+                        <div class="number">
+                            <h3 class="font-green-jungle">
+                                <small class="font-green-jungle">R$</small>
+                                <span>{{project.saldo}}</span>
+                            </h3>
+                            <small class="font-green-meadow">SALDO</small>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-arrow-up font-green-jungle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="dashboard-stat2 down">
+                    <div class="display">
+                        <div class="number">
+                            <h3 class="font-red-flamingo">
+                                <small class="font-red-flamingo">R$</small>
+                                <span>{{project.totalPago}}</span>
+                            </h3>
+                            <small class="font-red-pink">TOTAL PAGO</small>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-arrow-down font-red-flamingo"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="dashboard-stat2 down">
+                    <div class="display">
+                        <div class="number">
+                            <h3 class="font-red-flamingo">
+                                <small class="font-red-flamingo">R$</small>
+                                <span>{{project.saldoPagar}}</span>
+                            </h3>
+                            <small class="font-red-pink">SALDO A PAGAR</small>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-arrow-down font-red-flamingo"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="dashboard-stat2 down">
+                    <div class="display">
+                        <div class="number">
+                            <h3 class="font-red-flamingo">
+                                <small class="font-red-flamingo">R$</small>
+                                <span>{{project.previsaoCaixa}}</span>
+                            </h3>
+                            <small class="font-red-pink">PREVISÃO DE CAIXA</small>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-arrow-down font-red-flamingo"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

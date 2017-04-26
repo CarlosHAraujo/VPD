@@ -1,0 +1,27 @@
+/* here you can put your own css to customize and override the theme */
+.table-link tr > td {
+    cursor: pointer;
+}
+
+.animated.vanish {
+    display: none;
+}
+
+.dashboard-stat2.up {
+    background: rgba(38, 194, 129, 0.1);
+}
+
+.dashboard-stat2.down {
+    background: rgba(239, 72, 54, 0.1);
+}
+
+.portlet.box.grey-carrara > .portlet-title,
+.portlet.grey-carrara,
+.portlet > .portlet-body.grey-carrara {
+    background-color: #fafafa;
+}
+
+.mt-card-avatar > img.documento-thumbnail {
+    height: 250px;
+    object-fit: cover;
+}

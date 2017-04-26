@@ -1,0 +1,1189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B450C2F-26D1-4067-9C28-6D82F729EC52}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VPD</RootNamespace>
+    <AssemblyName>VPD</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevOne.Security.Cryptography.BCrypt">
+      <HintPath>..\packages\BCrypt.1.0.0.0\lib\DevOne.Security.Cryptography.BCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.25.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.25.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.25.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.25.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.25.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.25.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.25.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.25.0.834, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Drive.v3.1.25.0.834\lib\net45\Google.Apis.Drive.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.25.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.25.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.ConnectorNET.Data.6.8.3.2\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6">
+      <HintPath>..\packages\MySql.ConnectorNET.Entity.6.8.3.2\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, PublicKeyToken=431cba815f6a8b5b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\controllers\AppController.js" />
+    <Content Include="app\controllers\projects\contaPagar\CreateContaPagarController.js" />
+    <Content Include="app\controllers\projects\contaPagar\DetailsContaPagarController.js" />
+    <Content Include="app\controllers\projects\contaPagar\ListContaPagarController.js" />
+    <Content Include="app\controllers\projects\contaReceber\CreateContaReceberController.js" />
+    <Content Include="app\controllers\projects\contaReceber\DetailsContaReceberController.js" />
+    <Content Include="app\controllers\projects\CreateProjectController.js" />
+    <Content Include="app\controllers\projects\DetailsProjectController.js" />
+    <Content Include="app\controllers\documents\DocumentsController.js" />
+    <Content Include="app\controllers\FooterController.js" />
+    <Content Include="app\controllers\HeaderController.js" />
+    <Content Include="app\controllers\projects\EditProjectController.js" />
+    <Content Include="app\controllers\projects\entrada\CreateEntradaController.js" />
+    <Content Include="app\controllers\projects\entrada\DetailsEntradaController.js" />
+    <Content Include="app\controllers\projects\entrada\ListEntradaController.js" />
+    <Content Include="app\controllers\projects\ListProjectController.js" />
+    <Content Include="app\controllers\LoginController.js" />
+    <Content Include="app\controllers\projects\ProjectMenuController.js" />
+    <Content Include="app\controllers\PageHeadController.js" />
+    <Content Include="app\controllers\ProfileController.js" />
+    <Content Include="app\controllers\projects\saida\CreateSaidaController.js" />
+    <Content Include="app\controllers\projects\saida\DetailsSaidaController.js" />
+    <Content Include="app\controllers\projects\saida\ListSaidaController.js" />
+    <Content Include="app\directives.js" />
+    <Content Include="app\img\logo.jpg" />
+    <Content Include="app\main.js" />
+    <Content Include="app\services\AlertService.js" />
+    <Content Include="app\services\authInterceptorService.js" />
+    <Content Include="app\services\authService.js" />
+    <Content Include="app\services\DocumentoService.js" />
+    <Content Include="app\services\FinanceiroService.js" />
+    <Content Include="app\services\NotificationService.js" />
+    <Content Include="app\services\ProjectService.js" />
+    <Content Include="app\services\serverErrorInterceptorService.js" />
+    <Content Include="app\template\footer.html" />
+    <Content Include="app\template\header.html" />
+    <Content Include="app\template\page-head.html" />
+    <Content Include="app\template\layout.html" />
+    <Content Include="app\views\documents\index.html" />
+    <Content Include="app\views\login.html" />
+    <Content Include="app\views\profile.html" />
+    <Content Include="app\views\projects\contaPagar\create.html" />
+    <Content Include="app\views\projects\contaPagar\details.html" />
+    <Content Include="app\views\projects\contaPagar\list.html" />
+    <Content Include="app\views\projects\contaReceber\create.html" />
+    <Content Include="app\views\projects\contaReceber\details.html" />
+    <Content Include="app\views\projects\contaReceber\list.html" />
+    <Content Include="app\views\projects\create.html" />
+    <Content Include="app\views\projects\details.html" />
+    <Content Include="app\views\projects\edit.html" />
+    <Content Include="app\views\projects\entrada\create.html" />
+    <Content Include="app\views\projects\entrada\details.html" />
+    <Content Include="app\views\projects\entrada\list.html" />
+    <Content Include="app\views\projects\index.html" />
+    <Content Include="app\views\projects\list.html" />
+    <Content Include="app\views\projects\main.html" />
+    <Content Include="app\views\projects\menu.html" />
+    <Content Include="app\views\projects\saida\create.html" />
+    <Content Include="app\views\projects\saida\details.html" />
+    <Content Include="app\views\projects\saida\list.html" />
+    <Content Include="assets\angularjs\angular-cookies.min.js" />
+    <Content Include="assets\angularjs\angular-sanitize.min.js" />
+    <Content Include="assets\angularjs\angular-touch.min.js" />
+    <Content Include="assets\angularjs\angular.min.js" />
+    <Content Include="assets\angularjs\plugins\angular-animate.min.js" />
+    <Content Include="assets\angularjs\plugins\angular-breadcrumb.min.js" />
+    <Content Include="assets\angularjs\plugins\angular-file-upload\angular-file-upload.min.js" />
+    <Content Include="assets\angularjs\plugins\angular-local-storage.min.js" />
+    <Content Include="assets\angularjs\plugins\angular-messages.min.js" />
+    <Content Include="assets\angularjs\plugins\angular-resource.js" />
+    <Content Include="assets\angularjs\plugins\angular-ui-router.min.js" />
+    <Content Include="assets\angularjs\plugins\ocLazyLoad.min.js" />
+    <Content Include="assets\angularjs\plugins\ui-bootstrap-tpls.min.js" />
+    <Content Include="assets\angularjs\plugins\ui-select\select.min.css" />
+    <Content Include="assets\angularjs\plugins\ui-select\select.min.js" />
+    <Content Include="assets\backstretch\jquery.backstretch.js" />
+    <Content Include="assets\backstretch\jquery.backstretch.min.js" />
+    <Content Include="assets\bootstrap-datepicker\css\bootstrap-datepicker3.min.css" />
+    <Content Include="assets\bootstrap-datepicker\js\bootstrap-datepicker.min.js" />
+    <Content Include="assets\bootstrap-datepicker\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="assets\bootstrap-hover-dropdown\bootstrap-hover-dropdown.js" />
+    <Content Include="assets\bootstrap-hover-dropdown\bootstrap-hover-dropdown.min.js" />
+    <Content Include="assets\bootstrap-sweetalert\sweetalert.css" />
+    <Content Include="assets\bootstrap-sweetalert\sweetalert.js" />
+    <Content Include="assets\bootstrap-sweetalert\sweetalert.min.js" />
+    <Content Include="assets\bootstrap-switch\css\bootstrap-switch.css" />
+    <Content Include="assets\bootstrap-switch\css\bootstrap-switch.min.css" />
+    <Content Include="assets\bootstrap-switch\js\bootstrap-switch.js" />
+    <Content Include="assets\bootstrap-switch\js\bootstrap-switch.min.js" />
+    <Content Include="assets\bootstrap-toastr\toastr.css" />
+    <Content Include="assets\bootstrap-toastr\toastr.js" />
+    <Content Include="assets\bootstrap-toastr\toastr.min.css" />
+    <Content Include="assets\bootstrap-toastr\toastr.min.js" />
+    <Content Include="assets\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\components-md.css" />
+    <Content Include="assets\css\components-md.min.css" />
+    <Content Include="assets\css\components-rounded.css" />
+    <Content Include="assets\css\components-rounded.min.css" />
+    <Content Include="assets\css\components.css" />
+    <Content Include="assets\css\components.min.css" />
+    <Content Include="assets\css\plugins-md.css" />
+    <Content Include="assets\css\plugins-md.min.css" />
+    <Content Include="assets\css\plugins.css" />
+    <Content Include="assets\css\plugins.min.css" />
+    <Content Include="assets\excanvas.min.js" />
+    <Content Include="assets\font-awesome\css\font-awesome.css" />
+    <Content Include="assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\img\accordion-plusminus.png" />
+    <Content Include="assets\img\ajax-loading.gif" />
+    <Content Include="assets\img\ajax-modal-loading.gif" />
+    <Content Include="assets\img\datatable-row-openclose.png" />
+    <Content Include="assets\img\flags\ad.png" />
+    <Content Include="assets\img\flags\ae.png" />
+    <Content Include="assets\img\flags\af.png" />
+    <Content Include="assets\img\flags\ag.png" />
+    <Content Include="assets\img\flags\ai.png" />
+    <Content Include="assets\img\flags\al.png" />
+    <Content Include="assets\img\flags\am.png" />
+    <Content Include="assets\img\flags\an.png" />
+    <Content Include="assets\img\flags\ao.png" />
+    <Content Include="assets\img\flags\ar.png" />
+    <Content Include="assets\img\flags\as.png" />
+    <Content Include="assets\img\flags\at.png" />
+    <Content Include="assets\img\flags\au.png" />
+    <Content Include="assets\img\flags\aw.png" />
+    <Content Include="assets\img\flags\ax.png" />
+    <Content Include="assets\img\flags\az.png" />
+    <Content Include="assets\img\flags\ba.png" />
+    <Content Include="assets\img\flags\bb.png" />
+    <Content Include="assets\img\flags\bd.png" />
+    <Content Include="assets\img\flags\be.png" />
+    <Content Include="assets\img\flags\bf.png" />
+    <Content Include="assets\img\flags\bg.png" />
+    <Content Include="assets\img\flags\bh.png" />
+    <Content Include="assets\img\flags\bi.png" />
+    <Content Include="assets\img\flags\bj.png" />
+    <Content Include="assets\img\flags\bm.png" />
+    <Content Include="assets\img\flags\bn.png" />
+    <Content Include="assets\img\flags\bo.png" />
+    <Content Include="assets\img\flags\br.png" />
+    <Content Include="assets\img\flags\bs.png" />
+    <Content Include="assets\img\flags\bt.png" />
+    <Content Include="assets\img\flags\bv.png" />
+    <Content Include="assets\img\flags\bw.png" />
+    <Content Include="assets\img\flags\by.png" />
+    <Content Include="assets\img\flags\bz.png" />
+    <Content Include="assets\img\flags\ca.png" />
+    <Content Include="assets\img\flags\catalonia.png" />
+    <Content Include="assets\img\flags\cc.png" />
+    <Content Include="assets\img\flags\cd.png" />
+    <Content Include="assets\img\flags\cf.png" />
+    <Content Include="assets\img\flags\cg.png" />
+    <Content Include="assets\img\flags\ch.png" />
+    <Content Include="assets\img\flags\ci.png" />
+    <Content Include="assets\img\flags\ck.png" />
+    <Content Include="assets\img\flags\cl.png" />
+    <Content Include="assets\img\flags\cm.png" />
+    <Content Include="assets\img\flags\cn.png" />
+    <Content Include="assets\img\flags\co.png" />
+    <Content Include="assets\img\flags\cr.png" />
+    <Content Include="assets\img\flags\cs.png" />
+    <Content Include="assets\img\flags\cu.png" />
+    <Content Include="assets\img\flags\cv.png" />
+    <Content Include="assets\img\flags\cx.png" />
+    <Content Include="assets\img\flags\cy.png" />
+    <Content Include="assets\img\flags\cz.png" />
+    <Content Include="assets\img\flags\de.png" />
+    <Content Include="assets\img\flags\dj.png" />
+    <Content Include="assets\img\flags\dk.png" />
+    <Content Include="assets\img\flags\dm.png" />
+    <Content Include="assets\img\flags\do.png" />
+    <Content Include="assets\img\flags\dz.png" />
+    <Content Include="assets\img\flags\ec.png" />
+    <Content Include="assets\img\flags\ee.png" />
+    <Content Include="assets\img\flags\eg.png" />
+    <Content Include="assets\img\flags\eh.png" />
+    <Content Include="assets\img\flags\england.png" />
+    <Content Include="assets\img\flags\er.png" />
+    <Content Include="assets\img\flags\es.png" />
+    <Content Include="assets\img\flags\et.png" />
+    <Content Include="assets\img\flags\europeanunion.png" />
+    <Content Include="assets\img\flags\fam.png" />
+    <Content Include="assets\img\flags\fi.png" />
+    <Content Include="assets\img\flags\fj.png" />
+    <Content Include="assets\img\flags\fk.png" />
+    <Content Include="assets\img\flags\fm.png" />
+    <Content Include="assets\img\flags\fo.png" />
+    <Content Include="assets\img\flags\fr.png" />
+    <Content Include="assets\img\flags\ga.png" />
+    <Content Include="assets\img\flags\gb.png" />
+    <Content Include="assets\img\flags\gd.png" />
+    <Content Include="assets\img\flags\ge.png" />
+    <Content Include="assets\img\flags\gf.png" />
+    <Content Include="assets\img\flags\gh.png" />
+    <Content Include="assets\img\flags\gi.png" />
+    <Content Include="assets\img\flags\gl.png" />
+    <Content Include="assets\img\flags\gm.png" />
+    <Content Include="assets\img\flags\gn.png" />
+    <Content Include="assets\img\flags\gp.png" />
+    <Content Include="assets\img\flags\gq.png" />
+    <Content Include="assets\img\flags\gr.png" />
+    <Content Include="assets\img\flags\gs.png" />
+    <Content Include="assets\img\flags\gt.png" />
+    <Content Include="assets\img\flags\gu.png" />
+    <Content Include="assets\img\flags\gw.png" />
+    <Content Include="assets\img\flags\gy.png" />
+    <Content Include="assets\img\flags\hk.png" />
+    <Content Include="assets\img\flags\hm.png" />
+    <Content Include="assets\img\flags\hn.png" />
+    <Content Include="assets\img\flags\hr.png" />
+    <Content Include="assets\img\flags\ht.png" />
+    <Content Include="assets\img\flags\hu.png" />
+    <Content Include="assets\img\flags\id.png" />
+    <Content Include="assets\img\flags\ie.png" />
+    <Content Include="assets\img\flags\il.png" />
+    <Content Include="assets\img\flags\in.png" />
+    <Content Include="assets\img\flags\io.png" />
+    <Content Include="assets\img\flags\iq.png" />
+    <Content Include="assets\img\flags\ir.png" />
+    <Content Include="assets\img\flags\is.png" />
+    <Content Include="assets\img\flags\it.png" />
+    <Content Include="assets\img\flags\jm.png" />
+    <Content Include="assets\img\flags\jo.png" />
+    <Content Include="assets\img\flags\jp.png" />
+    <Content Include="assets\img\flags\ke.png" />
+    <Content Include="assets\img\flags\kg.png" />
+    <Content Include="assets\img\flags\kh.png" />
+    <Content Include="assets\img\flags\ki.png" />
+    <Content Include="assets\img\flags\km.png" />
+    <Content Include="assets\img\flags\kn.png" />
+    <Content Include="assets\img\flags\kp.png" />
+    <Content Include="assets\img\flags\kr.png" />
+    <Content Include="assets\img\flags\kw.png" />
+    <Content Include="assets\img\flags\ky.png" />
+    <Content Include="assets\img\flags\kz.png" />
+    <Content Include="assets\img\flags\la.png" />
+    <Content Include="assets\img\flags\lb.png" />
+    <Content Include="assets\img\flags\lc.png" />
+    <Content Include="assets\img\flags\li.png" />
+    <Content Include="assets\img\flags\lk.png" />
+    <Content Include="assets\img\flags\lr.png" />
+    <Content Include="assets\img\flags\ls.png" />
+    <Content Include="assets\img\flags\lt.png" />
+    <Content Include="assets\img\flags\lu.png" />
+    <Content Include="assets\img\flags\lv.png" />
+    <Content Include="assets\img\flags\ly.png" />
+    <Content Include="assets\img\flags\ma.png" />
+    <Content Include="assets\img\flags\mc.png" />
+    <Content Include="assets\img\flags\md.png" />
+    <Content Include="assets\img\flags\me.png" />
+    <Content Include="assets\img\flags\mg.png" />
+    <Content Include="assets\img\flags\mh.png" />
+    <Content Include="assets\img\flags\mk.png" />
+    <Content Include="assets\img\flags\ml.png" />
+    <Content Include="assets\img\flags\mm.png" />
+    <Content Include="assets\img\flags\mn.png" />
+    <Content Include="assets\img\flags\mo.png" />
+    <Content Include="assets\img\flags\mp.png" />
+    <Content Include="assets\img\flags\mq.png" />
+    <Content Include="assets\img\flags\mr.png" />
+    <Content Include="assets\img\flags\ms.png" />
+    <Content Include="assets\img\flags\mt.png" />
+    <Content Include="assets\img\flags\mu.png" />
+    <Content Include="assets\img\flags\mv.png" />
+    <Content Include="assets\img\flags\mw.png" />
+    <Content Include="assets\img\flags\mx.png" />
+    <Content Include="assets\img\flags\my.png" />
+    <Content Include="assets\img\flags\mz.png" />
+    <Content Include="assets\img\flags\na.png" />
+    <Content Include="assets\img\flags\nc.png" />
+    <Content Include="assets\img\flags\ne.png" />
+    <Content Include="assets\img\flags\nf.png" />
+    <Content Include="assets\img\flags\ng.png" />
+    <Content Include="assets\img\flags\ni.png" />
+    <Content Include="assets\img\flags\nl.png" />
+    <Content Include="assets\img\flags\no.png" />
+    <Content Include="assets\img\flags\np.png" />
+    <Content Include="assets\img\flags\nr.png" />
+    <Content Include="assets\img\flags\nu.png" />
+    <Content Include="assets\img\flags\nz.png" />
+    <Content Include="assets\img\flags\om.png" />
+    <Content Include="assets\img\flags\pa.png" />
+    <Content Include="assets\img\flags\pe.png" />
+    <Content Include="assets\img\flags\pf.png" />
+    <Content Include="assets\img\flags\pg.png" />
+    <Content Include="assets\img\flags\ph.png" />
+    <Content Include="assets\img\flags\pk.png" />
+    <Content Include="assets\img\flags\pl.png" />
+    <Content Include="assets\img\flags\pm.png" />
+    <Content Include="assets\img\flags\pn.png" />
+    <Content Include="assets\img\flags\pr.png" />
+    <Content Include="assets\img\flags\ps.png" />
+    <Content Include="assets\img\flags\pt.png" />
+    <Content Include="assets\img\flags\pw.png" />
+    <Content Include="assets\img\flags\py.png" />
+    <Content Include="assets\img\flags\qa.png" />
+    <Content Include="assets\img\flags\re.png" />
+    <Content Include="assets\img\flags\readme.txt" />
+    <Content Include="assets\img\flags\ro.png" />
+    <Content Include="assets\img\flags\rs.png" />
+    <Content Include="assets\img\flags\ru.png" />
+    <Content Include="assets\img\flags\rw.png" />
+    <Content Include="assets\img\flags\sa.png" />
+    <Content Include="assets\img\flags\sb.png" />
+    <Content Include="assets\img\flags\sc.png" />
+    <Content Include="assets\img\flags\scotland.png" />
+    <Content Include="assets\img\flags\sd.png" />
+    <Content Include="assets\img\flags\se.png" />
+    <Content Include="assets\img\flags\sg.png" />
+    <Content Include="assets\img\flags\sh.png" />
+    <Content Include="assets\img\flags\si.png" />
+    <Content Include="assets\img\flags\sj.png" />
+    <Content Include="assets\img\flags\sk.png" />
+    <Content Include="assets\img\flags\sl.png" />
+    <Content Include="assets\img\flags\sm.png" />
+    <Content Include="assets\img\flags\sn.png" />
+    <Content Include="assets\img\flags\so.png" />
+    <Content Include="assets\img\flags\sr.png" />
+    <Content Include="assets\img\flags\st.png" />
+    <Content Include="assets\img\flags\sv.png" />
+    <Content Include="assets\img\flags\sy.png" />
+    <Content Include="assets\img\flags\sz.png" />
+    <Content Include="assets\img\flags\tc.png" />
+    <Content Include="assets\img\flags\td.png" />
+    <Content Include="assets\img\flags\tf.png" />
+    <Content Include="assets\img\flags\tg.png" />
+    <Content Include="assets\img\flags\th.png" />
+    <Content Include="assets\img\flags\tj.png" />
+    <Content Include="assets\img\flags\tk.png" />
+    <Content Include="assets\img\flags\tl.png" />
+    <Content Include="assets\img\flags\tm.png" />
+    <Content Include="assets\img\flags\tn.png" />
+    <Content Include="assets\img\flags\to.png" />
+    <Content Include="assets\img\flags\tr.png" />
+    <Content Include="assets\img\flags\tt.png" />
+    <Content Include="assets\img\flags\tv.png" />
+    <Content Include="assets\img\flags\tw.png" />
+    <Content Include="assets\img\flags\tz.png" />
+    <Content Include="assets\img\flags\ua.png" />
+    <Content Include="assets\img\flags\ug.png" />
+    <Content Include="assets\img\flags\um.png" />
+    <Content Include="assets\img\flags\us.png" />
+    <Content Include="assets\img\flags\uy.png" />
+    <Content Include="assets\img\flags\uz.png" />
+    <Content Include="assets\img\flags\va.png" />
+    <Content Include="assets\img\flags\vc.png" />
+    <Content Include="assets\img\flags\ve.png" />
+    <Content Include="assets\img\flags\vg.png" />
+    <Content Include="assets\img\flags\vi.png" />
+    <Content Include="assets\img\flags\vn.png" />
+    <Content Include="assets\img\flags\vu.png" />
+    <Content Include="assets\img\flags\wales.png" />
+    <Content Include="assets\img\flags\wf.png" />
+    <Content Include="assets\img\flags\ws.png" />
+    <Content Include="assets\img\flags\ye.png" />
+    <Content Include="assets\img\flags\yt.png" />
+    <Content Include="assets\img\flags\za.png" />
+    <Content Include="assets\img\flags\zm.png" />
+    <Content Include="assets\img\flags\zw.png" />
+    <Content Include="assets\img\input-spinner.gif" />
+    <Content Include="assets\img\loading-spinner-blue.gif" />
+    <Content Include="assets\img\loading-spinner-default.gif" />
+    <Content Include="assets\img\loading-spinner-grey.gif" />
+    <Content Include="assets\img\loading.gif" />
+    <Content Include="assets\img\overlay-icon.png" />
+    <Content Include="assets\img\portfolio\1200x900\01.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\02.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\03.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\04.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\05.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\06.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\07.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\08.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\09.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\1.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\10.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\11.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\12.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\13.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\14.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\15.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\16.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\17.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\18.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\19.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\2.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\20.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\21.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\22.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\23.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\24.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\25.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\26.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\27.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\28.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\29.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\3.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\30.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\31.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\32.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\33.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\34.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\35.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\36.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\37.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\38.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\39.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\4.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\40.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\41.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\42.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\43.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\44.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\45.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\46.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\47.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\48.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\49.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\5.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\50.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\51.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\52.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\53.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\54.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\55.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\56.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\57.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\58.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\59.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\6.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\60.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\61.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\62.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\63.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\64.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\65.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\66.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\67.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\68.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\69.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\7.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\70.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\71.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\72.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\73.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\74.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\75.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\76.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\77.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\78.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\79.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\8.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\80.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\81.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\82.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\83.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\84.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\85.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\86.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\87.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\88.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\89.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\9.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\90.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\91.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\92.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\93.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\94.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\95.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\96.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\97.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\98.jpg" />
+    <Content Include="assets\img\portfolio\1200x900\99.jpg" />
+    <Content Include="assets\img\portfolio\400x300\1.jpg" />
+    <Content Include="assets\img\portfolio\400x300\2.jpg" />
+    <Content Include="assets\img\portfolio\400x300\3.jpg" />
+    <Content Include="assets\img\portfolio\600x600\01.jpg" />
+    <Content Include="assets\img\portfolio\600x600\010.jpg" />
+    <Content Include="assets\img\portfolio\600x600\011.jpg" />
+    <Content Include="assets\img\portfolio\600x600\012.jpg" />
+    <Content Include="assets\img\portfolio\600x600\013.jpg" />
+    <Content Include="assets\img\portfolio\600x600\014.jpg" />
+    <Content Include="assets\img\portfolio\600x600\015.jpg" />
+    <Content Include="assets\img\portfolio\600x600\016.jpg" />
+    <Content Include="assets\img\portfolio\600x600\017.jpg" />
+    <Content Include="assets\img\portfolio\600x600\02.jpg" />
+    <Content Include="assets\img\portfolio\600x600\03.jpg" />
+    <Content Include="assets\img\portfolio\600x600\04.jpg" />
+    <Content Include="assets\img\portfolio\600x600\05.jpg" />
+    <Content Include="assets\img\portfolio\600x600\06.jpg" />
+    <Content Include="assets\img\portfolio\600x600\07.jpg" />
+    <Content Include="assets\img\portfolio\600x600\08-long.jpg" />
+    <Content Include="assets\img\portfolio\600x600\08.jpg" />
+    <Content Include="assets\img\portfolio\600x600\09.jpg" />
+    <Content Include="assets\img\portfolio\600x600\1.jpg" />
+    <Content Include="assets\img\portfolio\600x600\10.jpg" />
+    <Content Include="assets\img\portfolio\600x600\100.jpg" />
+    <Content Include="assets\img\portfolio\600x600\101.jpg" />
+    <Content Include="assets\img\portfolio\600x600\102.jpg" />
+    <Content Include="assets\img\portfolio\600x600\103.jpg" />
+    <Content Include="assets\img\portfolio\600x600\11.jpg" />
+    <Content Include="assets\img\portfolio\600x600\12.jpg" />
+    <Content Include="assets\img\portfolio\600x600\13.jpg" />
+    <Content Include="assets\img\portfolio\600x600\14.jpg" />
+    <Content Include="assets\img\portfolio\600x600\15.jpg" />
+    <Content Include="assets\img\portfolio\600x600\16.jpg" />
+    <Content Include="assets\img\portfolio\600x600\17.jpg" />
+    <Content Include="assets\img\portfolio\600x600\18.jpg" />
+    <Content Include="assets\img\portfolio\600x600\19.jpg" />
+    <Content Include="assets\img\portfolio\600x600\2.jpg" />
+    <Content Include="assets\img\portfolio\600x600\20.jpg" />
+    <Content Include="assets\img\portfolio\600x600\21.jpg" />
+    <Content Include="assets\img\portfolio\600x600\22.jpg" />
+    <Content Include="assets\img\portfolio\600x600\23.jpg" />
+    <Content Include="assets\img\portfolio\600x600\24.jpg" />
+    <Content Include="assets\img\portfolio\600x600\25.jpg" />
+    <Content Include="assets\img\portfolio\600x600\26.jpg" />
+    <Content Include="assets\img\portfolio\600x600\27.jpg" />
+    <Content Include="assets\img\portfolio\600x600\28.jpg" />
+    <Content Include="assets\img\portfolio\600x600\29.jpg" />
+    <Content Include="assets\img\portfolio\600x600\3.jpg" />
+    <Content Include="assets\img\portfolio\600x600\30.jpg" />
+    <Content Include="assets\img\portfolio\600x600\31.jpg" />
+    <Content Include="assets\img\portfolio\600x600\32.jpg" />
+    <Content Include="assets\img\portfolio\600x600\33.jpg" />
+    <Content Include="assets\img\portfolio\600x600\34.jpg" />
+    <Content Include="assets\img\portfolio\600x600\35.jpg" />
+    <Content Include="assets\img\portfolio\600x600\36.jpg" />
+    <Content Include="assets\img\portfolio\600x600\37.jpg" />
+    <Content Include="assets\img\portfolio\600x600\38.jpg" />
+    <Content Include="assets\img\portfolio\600x600\39.jpg" />
+    <Content Include="assets\img\portfolio\600x600\4.jpg" />
+    <Content Include="assets\img\portfolio\600x600\40.jpg" />
+    <Content Include="assets\img\portfolio\600x600\41.jpg" />
+    <Content Include="assets\img\portfolio\600x600\42.jpg" />
+    <Content Include="assets\img\portfolio\600x600\43.jpg" />
+    <Content Include="assets\img\portfolio\600x600\44.jpg" />
+    <Content Include="assets\img\portfolio\600x600\45.jpg" />
+    <Content Include="assets\img\portfolio\600x600\46.jpg" />
+    <Content Include="assets\img\portfolio\600x600\47.jpg" />
+    <Content Include="assets\img\portfolio\600x600\48.jpg" />
+    <Content Include="assets\img\portfolio\600x600\49.jpg" />
+    <Content Include="assets\img\portfolio\600x600\5.jpg" />
+    <Content Include="assets\img\portfolio\600x600\50.jpg" />
+    <Content Include="assets\img\portfolio\600x600\51.jpg" />
+    <Content Include="assets\img\portfolio\600x600\52.jpg" />
+    <Content Include="assets\img\portfolio\600x600\53.jpg" />
+    <Content Include="assets\img\portfolio\600x600\54.jpg" />
+    <Content Include="assets\img\portfolio\600x600\55.jpg" />
+    <Content Include="assets\img\portfolio\600x600\56.jpg" />
+    <Content Include="assets\img\portfolio\600x600\57.jpg" />
+    <Content Include="assets\img\portfolio\600x600\58.jpg" />
+    <Content Include="assets\img\portfolio\600x600\59.jpg" />
+    <Content Include="assets\img\portfolio\600x600\6.jpg" />
+    <Content Include="assets\img\portfolio\600x600\60.jpg" />
+    <Content Include="assets\img\portfolio\600x600\61.jpg" />
+    <Content Include="assets\img\portfolio\600x600\62.jpg" />
+    <Content Include="assets\img\portfolio\600x600\63.jpg" />
+    <Content Include="assets\img\portfolio\600x600\64.jpg" />
+    <Content Include="assets\img\portfolio\600x600\65.jpg" />
+    <Content Include="assets\img\portfolio\600x600\66.jpg" />
+    <Content Include="assets\img\portfolio\600x600\67.jpg" />
+    <Content Include="assets\img\portfolio\600x600\68.jpg" />
+    <Content Include="assets\img\portfolio\600x600\69.jpg" />
+    <Content Include="assets\img\portfolio\600x600\7.jpg" />
+    <Content Include="assets\img\portfolio\600x600\70.jpg" />
+    <Content Include="assets\img\portfolio\600x600\71.jpg" />
+    <Content Include="assets\img\portfolio\600x600\72.jpg" />
+    <Content Include="assets\img\portfolio\600x600\73.jpg" />
+    <Content Include="assets\img\portfolio\600x600\74.jpg" />
+    <Content Include="assets\img\portfolio\600x600\75.jpg" />
+    <Content Include="assets\img\portfolio\600x600\76.jpg" />
+    <Content Include="assets\img\portfolio\600x600\77.jpg" />
+    <Content Include="assets\img\portfolio\600x600\78.jpg" />
+    <Content Include="assets\img\portfolio\600x600\79.jpg" />
+    <Content Include="assets\img\portfolio\600x600\8.jpg" />
+    <Content Include="assets\img\portfolio\600x600\80.jpg" />
+    <Content Include="assets\img\portfolio\600x600\81.jpg" />
+    <Content Include="assets\img\portfolio\600x600\82.jpg" />
+    <Content Include="assets\img\portfolio\600x600\83.jpg" />
+    <Content Include="assets\img\portfolio\600x600\84.jpg" />
+    <Content Include="assets\img\portfolio\600x600\85.jpg" />
+    <Content Include="assets\img\portfolio\600x600\86.jpg" />
+    <Content Include="assets\img\portfolio\600x600\87.jpg" />
+    <Content Include="assets\img\portfolio\600x600\88.jpg" />
+    <Content Include="assets\img\portfolio\600x600\89.jpg" />
+    <Content Include="assets\img\portfolio\600x600\9.jpg" />
+    <Content Include="assets\img\portfolio\600x600\90.jpg" />
+    <Content Include="assets\img\portfolio\600x600\91.jpg" />
+    <Content Include="assets\img\portfolio\600x600\92.jpg" />
+    <Content Include="assets\img\portfolio\600x600\93.jpg" />
+    <Content Include="assets\img\portfolio\600x600\94.jpg" />
+    <Content Include="assets\img\portfolio\600x600\95.jpg" />
+    <Content Include="assets\img\portfolio\600x600\96.jpg" />
+    <Content Include="assets\img\portfolio\600x600\97.jpg" />
+    <Content Include="assets\img\portfolio\600x600\98.jpg" />
+    <Content Include="assets\img\portfolio\600x600\99.jpg" />
+    <Content Include="assets\img\portlet-collapse-icon-white.png" />
+    <Content Include="assets\img\portlet-collapse-icon.png" />
+    <Content Include="assets\img\portlet-config-icon-white.png" />
+    <Content Include="assets\img\portlet-config-icon.png" />
+    <Content Include="assets\img\portlet-expand-icon-white.png" />
+    <Content Include="assets\img\portlet-expand-icon.png" />
+    <Content Include="assets\img\portlet-reload-icon-white.png" />
+    <Content Include="assets\img\portlet-reload-icon.png" />
+    <Content Include="assets\img\portlet-remove-icon-white.png" />
+    <Content Include="assets\img\portlet-remove-icon.png" />
+    <Content Include="assets\img\remove-icon-small.png" />
+    <Content Include="assets\img\social\aboutme.png" />
+    <Content Include="assets\img\social\amazon.png" />
+    <Content Include="assets\img\social\behance.png" />
+    <Content Include="assets\img\social\blogger.png" />
+    <Content Include="assets\img\social\deviantart.png" />
+    <Content Include="assets\img\social\dribbble.png" />
+    <Content Include="assets\img\social\dropbox.png" />
+    <Content Include="assets\img\social\evernote.png" />
+    <Content Include="assets\img\social\facebook.png" />
+    <Content Include="assets\img\social\flickr.png" />
+    <Content Include="assets\img\social\forrst.png" />
+    <Content Include="assets\img\social\foursquare.png" />
+    <Content Include="assets\img\social\github.png" />
+    <Content Include="assets\img\social\googleplus.png" />
+    <Content Include="assets\img\social\gravatar.png" />
+    <Content Include="assets\img\social\instagram.png" />
+    <Content Include="assets\img\social\jolicloud.png" />
+    <Content Include="assets\img\social\klout.png" />
+    <Content Include="assets\img\social\last-fm.png" />
+    <Content Include="assets\img\social\linkedin.png" />
+    <Content Include="assets\img\social\myspace.png" />
+    <Content Include="assets\img\social\picasa.png" />
+    <Content Include="assets\img\social\pintrest.png" />
+    <Content Include="assets\img\social\quora.png" />
+    <Content Include="assets\img\social\reddit.png" />
+    <Content Include="assets\img\social\rss.png" />
+    <Content Include="assets\img\social\skype.png" />
+    <Content Include="assets\img\social\spotify.png" />
+    <Content Include="assets\img\social\stumbleupon.png" />
+    <Content Include="assets\img\social\tumblr.png" />
+    <Content Include="assets\img\social\twitter.png" />
+    <Content Include="assets\img\social\vimeo.png" />
+    <Content Include="assets\img\social\vk.png" />
+    <Content Include="assets\img\social\wordpress.png" />
+    <Content Include="assets\img\social\xing.png" />
+    <Content Include="assets\img\social\yahoo.png" />
+    <Content Include="assets\img\social\youtube.png" />
+    <Content Include="assets\img\syncfusion-icons-white.png" />
+    <Content Include="assets\img\syncfusion-icons.png" />
+    <Content Include="assets\jquery-inputmask\jquery.inputmask.bundle.min.js" />
+    <Content Include="assets\jquery-migrate.min.js" />
+    <Content Include="assets\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="assets\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="assets\jquery-validation\js\additional-methods.js" />
+    <Content Include="assets\jquery-validation\js\additional-methods.min.js" />
+    <Content Include="assets\jquery-validation\js\jquery.validate.js" />
+    <Content Include="assets\jquery-validation\js\jquery.validate.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ar.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ar.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_bg.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_bg.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_bn_BD.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_bn_BD.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ca.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ca.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_cs.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_cs.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_da.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_da.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_de.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_de.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_el.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_el.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_es.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_es.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_es_AR.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_es_AR.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_es_PE.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_es_PE.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_et.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_et.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_eu.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_eu.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_fa.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_fa.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_fi.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_fi.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_fr.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_fr.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ge.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ge.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_gl.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_gl.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_he.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_he.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_hr.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_hr.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_hu.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_hu.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_hy_AM.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_hy_AM.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_id.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_id.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_is.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_is.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_it.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_it.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ja.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ja.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ka.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ka.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_kk.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_kk.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ko.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ko.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_lt.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_lt.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_lv.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_lv.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_my.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_my.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_nl.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_nl.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_no.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_no.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_pl.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_pl.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_pt_BR.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_pt_BR.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_pt_PT.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_pt_PT.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ro.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ro.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ru.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_ru.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_si.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_si.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_sk.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_sk.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_sl.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_sl.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_sr.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_sr.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_sr_lat.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_sr_lat.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_sv.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_sv.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_th.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_th.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_tj.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_tj.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_tr.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_tr.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_uk.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_uk.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_vi.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_vi.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_zh.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_zh.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_zh_TW.js" />
+    <Content Include="assets\jquery-validation\js\localization\messages_zh_TW.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\methods_de.js" />
+    <Content Include="assets\jquery-validation\js\localization\methods_de.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\methods_es_CL.js" />
+    <Content Include="assets\jquery-validation\js\localization\methods_es_CL.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\methods_fi.js" />
+    <Content Include="assets\jquery-validation\js\localization\methods_fi.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\methods_nl.js" />
+    <Content Include="assets\jquery-validation\js\localization\methods_nl.min.js" />
+    <Content Include="assets\jquery-validation\js\localization\methods_pt.js" />
+    <Content Include="assets\jquery-validation\js\localization\methods_pt.min.js" />
+    <Content Include="assets\jquery.blockui.min.js" />
+    <Content Include="assets\jquery.cookie.min.js" />
+    <Content Include="assets\jquery.min.js" />
+    <Content Include="assets\jquery.sparkline.min.js" />
+    <Content Include="assets\layouts\global\scripts\quick-sidebar.js" />
+    <Content Include="assets\layouts\layout5\css\custom.css" />
+    <Content Include="assets\layouts\layout5\css\layout.css" />
+    <Content Include="assets\layouts\layout5\css\login-5.css" />
+    <Content Include="assets\layouts\layout5\img\avatar1.jpg" />
+    <Content Include="assets\layouts\layout5\img\bg1.jpg" />
+    <Content Include="assets\layouts\layout5\img\bg2.jpg" />
+    <Content Include="assets\layouts\layout5\img\bg3.jpg" />
+    <Content Include="assets\layouts\layout5\img\logo.png" />
+    <Content Include="assets\layouts\layout5\scripts\index.js" />
+    <Content Include="assets\layouts\layout5\scripts\layout.js" />
+    <Content Include="assets\layouts\layout5\scripts\login-5.min.js" />
+    <Content Include="assets\morris\morris.css" />
+    <Content Include="assets\morris\morris.js" />
+    <Content Include="assets\morris\morris.min.js" />
+    <Content Include="assets\morris\raphael-min.js" />
+    <Content Include="assets\pages\media\users\avatar1.jpg" />
+    <Content Include="assets\pages\media\users\avatar10.jpg" />
+    <Content Include="assets\pages\media\users\avatar11.jpg" />
+    <Content Include="assets\pages\media\users\avatar2.jpg" />
+    <Content Include="assets\pages\media\users\avatar3.jpg" />
+    <Content Include="assets\pages\media\users\avatar4.jpg" />
+    <Content Include="assets\pages\media\users\avatar5.jpg" />
+    <Content Include="assets\pages\media\users\avatar6.jpg" />
+    <Content Include="assets\pages\media\users\avatar7.jpg" />
+    <Content Include="assets\pages\media\users\avatar8.jpg" />
+    <Content Include="assets\pages\media\users\avatar80_1.jpg" />
+    <Content Include="assets\pages\media\users\avatar80_2.jpg" />
+    <Content Include="assets\pages\media\users\avatar80_3.jpg" />
+    <Content Include="assets\pages\media\users\avatar80_4.jpg" />
+    <Content Include="assets\pages\media\users\avatar80_5.jpg" />
+    <Content Include="assets\pages\media\users\avatar80_6.jpg" />
+    <Content Include="assets\pages\media\users\avatar80_7.jpg" />
+    <Content Include="assets\pages\media\users\avatar80_8.jpg" />
+    <Content Include="assets\pages\media\users\avatar9.jpg" />
+    <Content Include="assets\pages\media\users\teambg1.jpg" />
+    <Content Include="assets\pages\media\users\teambg2.jpg" />
+    <Content Include="assets\pages\media\users\teambg3.jpg" />
+    <Content Include="assets\pages\media\users\teambg4.jpg" />
+    <Content Include="assets\pages\media\users\teambg5.jpg" />
+    <Content Include="assets\pages\media\users\teambg6.jpg" />
+    <Content Include="assets\pages\media\users\teambg7.jpg" />
+    <Content Include="assets\pages\media\users\teambg8.jpg" />
+    <Content Include="assets\pages\scripts\dashboard.min.js" />
+    <Content Include="assets\respond.min.js" />
+    <Content Include="assets\scripts\app.js" />
+    <Content Include="assets\scripts\datatable.js" />
+    <Content Include="assets\scripts\datatable.min.js" />
+    <Content Include="assets\select2\css\select2-bootstrap.min.css" />
+    <Content Include="assets\select2\css\select2.css" />
+    <Content Include="assets\select2\css\select2.min.css" />
+    <Content Include="assets\select2\js\i18n\az.js" />
+    <Content Include="assets\select2\js\i18n\bg.js" />
+    <Content Include="assets\select2\js\i18n\ca.js" />
+    <Content Include="assets\select2\js\i18n\cs.js" />
+    <Content Include="assets\select2\js\i18n\da.js" />
+    <Content Include="assets\select2\js\i18n\de.js" />
+    <Content Include="assets\select2\js\i18n\en.js" />
+    <Content Include="assets\select2\js\i18n\es.js" />
+    <Content Include="assets\select2\js\i18n\et.js" />
+    <Content Include="assets\select2\js\i18n\eu.js" />
+    <Content Include="assets\select2\js\i18n\fa.js" />
+    <Content Include="assets\select2\js\i18n\fi.js" />
+    <Content Include="assets\select2\js\i18n\fr.js" />
+    <Content Include="assets\select2\js\i18n\gl.js" />
+    <Content Include="assets\select2\js\i18n\he.js" />
+    <Content Include="assets\select2\js\i18n\hi.js" />
+    <Content Include="assets\select2\js\i18n\hr.js" />
+    <Content Include="assets\select2\js\i18n\hu.js" />
+    <Content Include="assets\select2\js\i18n\id.js" />
+    <Content Include="assets\select2\js\i18n\is.js" />
+    <Content Include="assets\select2\js\i18n\it.js" />
+    <Content Include="assets\select2\js\i18n\ko.js" />
+    <Content Include="assets\select2\js\i18n\lt.js" />
+    <Content Include="assets\select2\js\i18n\lv.js" />
+    <Content Include="assets\select2\js\i18n\mk.js" />
+    <Content Include="assets\select2\js\i18n\nb.js" />
+    <Content Include="assets\select2\js\i18n\nl.js" />
+    <Content Include="assets\select2\js\i18n\pl.js" />
+    <Content Include="assets\select2\js\i18n\pt-BR.js" />
+    <Content Include="assets\select2\js\i18n\pt.js" />
+    <Content Include="assets\select2\js\i18n\ro.js" />
+    <Content Include="assets\select2\js\i18n\ru.js" />
+    <Content Include="assets\select2\js\i18n\sk.js" />
+    <Content Include="assets\select2\js\i18n\sr.js" />
+    <Content Include="assets\select2\js\i18n\sv.js" />
+    <Content Include="assets\select2\js\i18n\th.js" />
+    <Content Include="assets\select2\js\i18n\tr.js" />
+    <Content Include="assets\select2\js\i18n\uk.js" />
+    <Content Include="assets\select2\js\i18n\vi.js" />
+    <Content Include="assets\select2\js\i18n\zh-CN.js" />
+    <Content Include="assets\select2\js\i18n\zh-TW.js" />
+    <Content Include="assets\select2\js\select2.full.js" />
+    <Content Include="assets\select2\js\select2.full.min.js" />
+    <Content Include="assets\select2\js\select2.js" />
+    <Content Include="assets\select2\js\select2.min.js" />
+    <Content Include="assets\simple-line-icons\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="assets\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="assets\simple-line-icons\icons-lte-ie7.js" />
+    <Content Include="assets\simple-line-icons\License.txt" />
+    <Content Include="assets\simple-line-icons\Readme.txt" />
+    <Content Include="assets\simple-line-icons\simple-line-icons.css" />
+    <Content Include="assets\simple-line-icons\simple-line-icons.min.css" />
+    <Content Include="assets\uniform\css\uniform.default.css" />
+    <Content Include="assets\uniform\css\uniform.default.min.css" />
+    <Content Include="assets\uniform\images\bg-input-focus.png" />
+    <Content Include="assets\uniform\images\bg-input.png" />
+    <Content Include="assets\uniform\images\sprite.png" />
+    <Content Include="assets\uniform\images\sprite_original.png" />
+    <Content Include="assets\uniform\jquery.uniform.js" />
+    <Content Include="assets\uniform\jquery.uniform.min.js" />
+    <Content Include="Index.html" />
+    <Content Include="assets\bootstrap-toastr\README.md" />
+    <Content Include="assets\bootstrap-toastr\toastr.min.js.map" />
+    <Content Include="app\controllers\projects\contaReceber\ListContaReceberController.js" />
+    <None Include="_references.js" />
+    <Content Include="service_account.json" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Auth\AuthenticationProvider.cs" />
+    <Compile Include="Auth\Helper.cs" />
+    <Compile Include="Auth\SimpleAuthorizationServerProvider.cs" />
+    <Compile Include="Auth\SimpleRefreshTokenProvider.cs" />
+    <Compile Include="Controllers\DocumentoController.cs" />
+    <Compile Include="Controllers\FinanceiroController.cs" />
+    <Compile Include="Controllers\ProjetoController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DecimalConverter.cs" />
+    <Compile Include="ExceptionFilterAttribute.cs" />
+    <Compile Include="Migrations\201701312116559_Initial.cs" />
+    <Compile Include="Migrations\201701312116559_Initial.Designer.cs">
+      <DependentUpon>201701312116559_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ContaPagar.cs" />
+    <Compile Include="Models\ContaReceber.cs" />
+    <Compile Include="Models\Credito.cs" />
+    <Compile Include="Models\Debito.cs" />
+    <Compile Include="Models\Documento.cs" />
+    <Compile Include="Models\GoogleDriveResponse.cs" />
+    <Compile Include="Models\Projeto.cs" />
+    <Compile Include="Models\RefreshToken.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Context.cs" />
+    <Compile Include="Repository\DocumentoRepository.cs" />
+    <Compile Include="Repository\FinanceiroRepository.cs" />
+    <Compile Include="Repository\ProjetoRepository.cs" />
+    <Compile Include="Repository\RefreshTokenRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\ContaPagarPost.cs" />
+    <Compile Include="ViewModel\ContaReceberPost.cs" />
+    <Compile Include="ViewModel\EntradaPost.cs" />
+    <Compile Include="ViewModel\ProjetoPost.cs" />
+    <Compile Include="ViewModel\SaidaPost.cs" />
+    <Compile Include="ViewModel\UserPost.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="assets\angularjs\angular-cookies.min.js.map" />
+    <Content Include="assets\angularjs\angular-sanitize.min.js.map" />
+    <Content Include="assets\angularjs\angular-touch.min.js.map" />
+    <Content Include="assets\angularjs\angular.min.js.map" />
+    <Content Include="assets\angularjs\plugins\angular-file-upload\upload.php" />
+    <Content Include="assets\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="assets\jquery-slimscroll\README.md" />
+    <Content Include="assets\jquery-slimscroll\slimScroll.jquery.json" />
+    <Content Include="assets\jquery.min.map" />
+    <Content Include="assets\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="assets\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="assets\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="assets\uniform\css\uniform.default.scss" />
+    <Content Include="assets\uniform\README.md" />
+    <Content Include="assets\morris\README.md" />
+    <Content Include="assets\bootstrap-hover-dropdown\LICENSE" />
+    <Content Include="assets\bootstrap-hover-dropdown\README.md" />
+    <Content Include="assets\bootstrap-switch\LICENSE" />
+    <Content Include="assets\bootstrap-switch\README.md" />
+    <Content Include="assets\img\social\Thumbs.db" />
+    <Content Include="assets\backstretch\LICENSE-MIT" />
+    <Content Include="assets\backstretch\README.md" />
+    <Content Include="assets\jquery-validation\README.md" />
+    <Content Include="assets\select2\LICENSE.md" />
+    <Content Include="assets\select2\README.md" />
+    <Content Include="assets\select2\sass\select2-bootstrap.min.scss" />
+    <None Include="Web.Base.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701312116559_Initial.resx">
+      <DependentUpon>201701312116559_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Base|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>15714</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:15714/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v12.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Target Name="BeforeBuild">
+    <TransformXml Source="Web.Base.config" Transform="Web.$(Configuration).config" Destination="Web.config" />
+  </Target>
+</Project>

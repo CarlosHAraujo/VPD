@@ -1,0 +1,104 @@
+﻿<link href="assets/layouts/layout5/css/login-5.css" rel="stylesheet" type="text/css" />
+<link href="assets/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+
+<div class="body-login-wrapper">
+	<div class="login">
+		<!-- BEGIN : LOGIN PAGE 5-2 -->
+		<div class="user-login-5">
+			<div class="row bs-reset">
+				<div class="col-md-6 login-container bs-reset">
+					<div class="row">
+						<div class="col-xs-2">
+							<img class="login-logo login-6" ng-src="{{$settings.layout.logo_100x100}}" />
+						</div>
+						<div class="col-xs-10 text-center" style="margin-top:85px;">
+							<h1>Voluntário por um dia - Login</h1>
+						</div>
+					</div>                
+					<div class="login-content">
+						<div class="row">
+							<div class="col-xs-12">
+								<hr />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<h3>Missão</h3>
+								<p>Promover o espírito solidário entre os jovens e ajudar, potencializar e dar visibilidade a boas iniciativas sociais.</p>
+								<h3>Visão</h3>
+								<p>Construir uma cultura solidária no Brasil que se caracteriza pela competência e eficácia de suas ações.</p>
+							</div>
+						</div>
+						<form name="form" novalidate class="login-form" ng-submit="form.$valid && submit(login)">
+							<div class="row">
+								<div class="col-xs-6">
+									<input ng-model="email" class="form-control form-control-solid placeholder-no-fix" type="email" autocomplete="off" placeholder="Email" name="email" required />
+								</div>
+								<div class="col-xs-6">
+									<input ng-model="password" class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" required />
+								</div>
+							</div>
+							<div ng-show="loginError" class="alert alert-danger">
+								<span>
+									{{loginError}}
+								</span>
+							</div>
+							<div ng-show="form.$submitted && form.$invalid" class="alert alert-danger">
+								<ul>
+									<li ng-show="form.email.$error.required">
+										<span>
+											Preencha seu email.
+										</span>
+									</li>
+									<li ng-show="form.email.$error.email">
+										<span>
+											Email inválido.
+										</span>
+									</li>
+									<li ng-show="form.password.$error.required">
+										<span>
+											Digite sua senha.
+										</span>
+									</li>
+								</ul>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 text-right">
+									<div class="forgot-password">
+										<a href="javascript:;" id="forget-password" class="forget-password">Esqueci minha senha?</a>
+									</div>
+									<button class="btn blue" type="submit">Entrar</button>
+								</div>
+							</div>
+						</form>
+						<!-- BEGIN FORGOT PASSWORD FORM -->
+						<form class="forget-form" action="javascript:;" method="post">
+							<h3 class="font-green">Esqueceu sua senha?</h3>
+							<p>Infome seu email abaixo para resetar a senha:</p>
+							<div class="form-group">
+								<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" />
+							</div>
+							<div class="form-actions">
+								<button type="button" id="back-btn" class="btn grey btn-default">Voltar</button>
+								<button type="submit" class="btn blue btn-success uppercase pull-right">Enviar</button>
+							</div>
+						</form>
+						<!-- END FORGOT PASSWORD FORM -->
+					</div>
+				</div>
+				<div class="col-md-6 bs-reset">
+					<div class="login-bg"> </div>
+				</div>
+			</div>
+		</div>
+		<!-- END : LOGIN PAGE 5-2 -->
+	</div>
+</div>
+
+<script src="assets/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="assets/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+<script src="assets/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="assets/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+<script src="assets/scripts/app.js" type="text/javascript"></script>
+<script src="assets/layouts/layout5/scripts/login-5.min.js" type="text/javascript"></script>

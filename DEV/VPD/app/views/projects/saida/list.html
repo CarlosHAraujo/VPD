@@ -1,0 +1,20 @@
+﻿<div class="table-scrollable table-scrollable-borderless table-hover table-link">
+    <table class="table table-hover table-light">
+        <thead>
+            <tr class="uppercase">
+                <th>#</th>
+                <th>Histórico</th>
+                <th>Valor</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="saida in saidas">
+            <tr ui-sref="projects.saida.details({ projectId: projectId, saidaId: saida.id })">
+                <td>{{saida.id}}</td>
+                <td>{{saida.historico}}</td>
+                <td>{{saida.valor|currency: 'R$'}}</td>
+                <td>{{saida.data|date: 'd/M/yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

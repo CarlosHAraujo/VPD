@@ -1,0 +1,44 @@
+﻿<div class="row">
+    <div class="col-xs-12">
+        <form class="form" ng-submit="form.$valid && post()" method="post" name="form" novalidate role="form">
+            <div class="form-body">
+                <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.nome.$invalid }">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label class="control-label">Nome</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="input-icon right">
+                                <i class="fa fa-asterisk font-red-pink"></i>
+                                <input ng-model="project.nome"
+                                       name="nome"
+                                       type="text"
+                                       class="form-control"
+                                       placeholder="Nome"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="col-xs-8"
+                             ng-messages="form.nome.$error"
+                             role="alert"
+                             ng-show="form.$submitted">
+                            <span class="help-block help-block-error"
+                                  ng-message="required">Este campo é obrigatório.</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit"
+                        class="btn blue">
+                    Salvar
+                </button>
+                <button type="button"
+                        class="btn default"
+                        ui-sref="projects.details({ projectId: project.id })">
+                    Cancelar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

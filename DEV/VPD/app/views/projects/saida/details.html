@@ -1,0 +1,20 @@
+﻿<div class="portlet light grey-carrara">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="icon-book-open"></i>
+            <span class="caption-subject bold uppercase"> Detalhes do lançamento</span>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <dl>
+            <dt>Id</dt>
+            <dd>{{saida.id}}</dd>
+            <dt>Histórico</dt>
+            <dd>{{saida.historico}}</dd>
+            <dt>Valor</dt>
+            <dd>{{saida.valor|currency: 'R$'}}</dd>
+            <dt>Data</dt>
+            <dd>{{saida.data|date: 'd/M/yyyy'}}</dd>
+        </dl>
+    </div>
+</div>

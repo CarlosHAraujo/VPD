@@ -1,0 +1,22 @@
+﻿<div class="table-scrollable table-scrollable-borderless table-hover table-link">
+    <table class="table table-hover table-light">
+        <thead>
+            <tr class="uppercase">
+                <th>#</th>
+                <th>Histórico</th>
+                <th>Valor</th>
+                <th>Pagamento em</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="entrada in entradas">
+            <tr ui-sref="projects.entrada.details({ projectId: projectId, entradaId: entrada.id })">
+                <td>{{entrada.id}}</td>
+                <td>{{entrada.historico}}</td>
+                <td>{{entrada.valor|currency: 'R$'}}</td>
+                <td>{{entrada.pagamento}}</td>
+                <td>{{entrada.data|date: 'd/M/yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

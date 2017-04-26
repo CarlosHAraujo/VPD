@@ -1,0 +1,28 @@
+﻿<div class="row">
+    <div class="col-xs-3 pull-right">
+        <button ui-sref="projects.create" class="btn green-sharp btn-outline btn-block uppercase">
+        <span class="fa fa-plus"></span> Novo projeto</button>
+    </div>
+</div>
+<div class="table-scrollable table-scrollable-borderless table-hover table-link">
+    <table class="table table-hover table-light">
+        <thead>
+            <tr class="uppercase">
+                <th>#</th>
+                <th>Nome</th>
+                <th>Criado em</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="project in projects">
+            <tr ui-sref="projects.details({ projectId: project.id })">
+                <td>{{project.id}}</td>
+                <td>{{project.nome}}</td>
+                <td>{{project.dataCriacao|date:'d/M/yyyy'}}</td>
+                <td>
+                    <span class="label label-sm" ng-class="{ 'label-success': project.status == 'Aberto', 'label-danger': project.status == 'Encerrado' }">{{project.status}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

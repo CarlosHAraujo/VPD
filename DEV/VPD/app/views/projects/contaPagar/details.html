@@ -1,0 +1,26 @@
+﻿<div class="portlet light grey-carrara">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="icon-book-open"></i>
+            <span class="caption-subject bold uppercase"> Detalhes da conta</span>
+        </div>
+        <div class="actions">
+            <a ng-click="deletar()" class="btn btn-circle red">
+                <i class="fa fa-times"></i> deletar
+            </a>
+            <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="fullscreen" title="fullscreen"> </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <dl>
+            <dt>Id</dt>
+            <dd>{{conta.id}}</dd>
+            <dt>Histórico</dt>
+            <dd>{{conta.historico}}</dd>
+            <dt>Valor</dt>
+            <dd>{{conta.valor|currency: 'R$'}}</dd>
+            <dt>Data a pagar</dt>
+            <dd>{{conta.data|date: 'd/M/yyyy'}}</dd>
+        </dl>
+    </div>
+</div>

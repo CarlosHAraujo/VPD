@@ -1,0 +1,21 @@
+﻿<div class="page-sidebar">
+    <nav class="navbar" role="navigation">
+        <h3 ng-repeat-start="menu in menus" ng-if="menu.title">{{menu.title}}</h3>
+        <ul ng-repeat-end class="nav navbar-nav margin-bottom-35">
+            <li ng-repeat="action in menu.actions" ng-class="{ 'active': action.active }">
+                <a ui-sref="{{action.link}}" class="uppercase">
+                    <i class="{{action.icon}}"></i> {{action.name}}
+                    <span class="{{action.notification.icon}}">{{action.notification.text}}</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <button ng-back class="btn btn-lg btn-circle blue btn-outline btn-block">
+            <i class="icon-arrow-left"></i>
+            <span style="vertical-align:text-top;">Voltar</span>
+        </button>
+    </div>
+</div>

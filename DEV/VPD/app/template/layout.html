@@ -1,0 +1,24 @@
+﻿<link href="assets/layouts/layout5/css/layout.css" rel="stylesheet" type="text/css" />
+<!-- BEGIN CONTAINER -->
+<div class="body-content-wrapper" style="height: 100%">
+    <div class="wrapper page-header-fixed page-sidebar-closed-hide-logo">
+        <!-- BEGIN HEADER -->
+        <header class="page-header" data-ng-include="'app/template/header.html'" data-ng-controller="HeaderController"></header>
+        <!-- END HEADER -->
+        <div class="container-fluid">
+            <div class="page-content">
+                <div data-ng-include="'app/template/page-head.html'" data-ng-controller="PageHeadController"></div>
+                <!-- BEGIN PAGE BASE CONTENT -->
+                <div id="content" ng-animate="{ enter: 'fadeInUp', leave: 'fadeOutDown' }" ui-view="content">
+                </div>
+                <!-- END PAGE BASE CONTENT -->
+            </div>
+            <!-- BEGIN FOOTER -->
+            <div data-ng-include="'app/template/footer.html'" data-ng-controller="FooterController"></div>
+            <!-- END FOOTER -->
+        </div>
+    </div>
+</div>
+<!-- END CONTAINER -->
+<script src="assets/scripts/app.js" type="text/javascript"></script>
+<script src="assets/layouts/layout5/scripts/layout.js" type="text/javascript"></script>

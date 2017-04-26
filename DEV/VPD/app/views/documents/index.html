@@ -1,0 +1,64 @@
+<div class="page-content-container">
+    <div class="row">
+        <div class="col-sm-2 pull-right">
+            <div class="btn-group btn-group-lg btn-group-devided pull-right margin-bottom-10">
+                <button type="button" 
+                        class="btn btn-default"
+                        ng-click="previousPage()"
+                        ng-disabled="previousPageToken.length <= 1">
+                    <i class="icon icon-arrow-left fa-2x padding-tb-10"></i>
+                </button>
+                <button type="button" 
+                        class="btn btn-default"
+                        ng-click="nextPage()"
+                        ng-disabled="!nextPageToken">
+                    <i class="icon icon-arrow-right fa-2x padding-tb-10"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="mt-element-card mt-element-overlay">
+                <div class="row">
+                    <div ng-repeat="documento in documentos">
+                        <div class="clearfix" ng-if="$index % 4 == 0"></div>
+                        <div class="col-sm-3 col-xs-12">
+                            <div class="mt-card-item">
+                                <div class="mt-card-avatar mt-overlay-1">
+                                    <img class="documento-thumbnail" ng-src="{{documento.thumbnail || documento.iconLink }}">
+                                    <div class="mt-overlay">
+                                        <ul class="mt-info">
+                                            <li>
+                                                <a class="btn default btn-outline"
+                                                   ng-href="{{documento.viewLink}}"
+                                                   target="_blank"
+                                                   title="View">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="btn default btn-outline"
+                                                   ng-href="{{documento.downloadLink}}"
+                                                   title="Download">
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mt-card-content">
+                                    <h3 class="mt-card-name">{{documento.name}}</h3>
+                                    <p class="mt-card-desc font-grey-mint">{{documento.owner}}</p>
+                                    <div class="mt-card-social">
+                                        <span>{{documento.extension || documento.fullExtension || documento.mimeType}} | {{documento.size|bytes}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

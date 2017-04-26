@@ -1,0 +1,92 @@
+<nav class="navbar mega-menu" role="navigation">
+    <div class="container-fluid">
+        <div class="clearfix navbar-fixed-top">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="toggle-icon">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </span>
+            </button>
+            <!-- End Toggle Button -->
+            <!-- BEGIN LOGO -->
+            <a class="page-logo" ui-sref="projects.list">
+                <img ng-src="{{$settings.layout.logo_100x100}}" alt="Logo">
+            </a>
+            <!-- END LOGO -->
+            <!-- BEGIN TOPBAR ACTIONS -->
+            <div class="topbar-actions">
+                <!-- BEGIN USER PROFILE -->
+                <div class="btn-group-img btn-group">
+                    <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <span>Hi, Marcus</span>
+                        <img src="{{$settings.layoutPath}}/img/avatar1.jpg" alt="">
+                    </button>
+                    <ul class="dropdown-menu-v2" role="menu">
+                        <li>
+                            <a ui-sref="profile">
+                                <i class="icon-user"></i> Profile
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-key"></i> Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END USER PROFILE -->
+            </div>
+            <!-- END TOPBAR ACTIONS -->
+        </div>
+        <!-- #region HEADER MENU -->
+        <div class="nav-collapse collapse navbar-collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown dropdown-fw" ui-sref-active="{ 'active open selected': 'projects.*.*' }">
+                    <a ui-sref="projects.list" class="text-uppercase">
+                        <i class="icon-puzzle"></i> Projetos
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-fw"
+                        ng-class="{ 'ng-hide': ('projects.list' | includedByState) || ('projects.create' | includedByState) }">
+                        <li class="dropdown more-dropdown-sub">
+                            <a href="javascript:;">
+                                <i class="icon-diamond"></i> Financeiro
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a ui-sref="projects.contapagar({ projectId: $stateParams.projectId })">
+                                        <i class="icon-diamond"></i> Contas a pagar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a ui-sref="projects.contareceber({ projectId: $stateParams.projectId })">
+                                        <i class="icon-diamond"></i> Contas a receber
+                                    </a>
+                                </li>
+                                <li>
+                                    <a ui-sref="projects.entrada({ projectId: $stateParams.projectId })">
+                                        <i class="icon-diamond"></i> Entrada de caixa
+                                    </a>
+                                </li>
+                                <li>
+                                    <a ui-sref="projects.saida({ projectId: $stateParams.projectId })">
+                                        <i class="icon-diamond"></i> Saída de caixa
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown dropdown-fw" ui-sref-active="active open selected">
+                    <a ui-sref="documents" class="text-uppercase">
+                        <i class="icon-layers"></i> Documentos
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- #endregion -->
+    </div>
+</nav>

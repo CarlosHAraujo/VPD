@@ -1,0 +1,20 @@
+﻿<div class="table-scrollable table-scrollable-borderless table-hover table-link">
+    <table class="table table-hover table-light">
+        <thead>
+            <tr class="uppercase">
+                <th>#</th>
+                <th>Histórico</th>
+                <th>Valor</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="conta in contas">
+            <tr ui-sref="projects.contapagar.details({ projectId: projectId, contaId: conta.id })">
+                <td>{{conta.id}}</td>
+                <td>{{conta.historico}}</td>
+                <td>{{conta.valor|currency: 'R$'}}</td>
+                <td>{{conta.data|date: 'd/M/yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

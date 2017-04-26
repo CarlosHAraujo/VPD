@@ -1,0 +1,18 @@
+﻿<div class="page-content-container">
+    <div class="row">
+        <!-- BEGIN PAGE SIDEBAR -->
+        <div id="menu" 
+             ui-view="menu" 
+             class="col-xs-3"
+             ng-animate="{ enter: 'fadeInDown', leave: 'fadeOutUp' }"
+             ng-if="$state.current.data.showMenu">
+        </div>
+        <!-- END PAGE SIDEBAR -->
+        <!-- BEGIN PAGE BASE CONTENT -->
+        <div id="main" 
+             ui-view="main"
+             ng-class="$state.current.data.showMenu ? 'col-xs-9' : 'col-xs-12'">
+        </div>
+        <!-- END PAGE BASE CONTENT -->
+    </div>
+</div>

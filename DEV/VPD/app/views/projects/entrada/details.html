@@ -1,0 +1,22 @@
+﻿<div class="portlet light grey-carrara">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="icon-book-open"></i>
+            <span class="caption-subject bold uppercase"> Detalhes do lançamento</span>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <dl>
+            <dt>Id</dt>
+            <dd>{{entrada.id}}</dd>
+            <dt>Histórico</dt>
+            <dd>{{entrada.historico}}</dd>
+            <dt>Valor</dt>
+            <dd>{{entrada.valor|currency: 'R$'}}</dd>
+            <dt>Pagamento em</dt>
+            <dd>{{entrada.pagamento}}</dd>
+            <dt>Data</dt>
+            <dd>{{entrada.data|date: 'd/M/yyyy'}}</dd>
+        </dl>
+    </div>
+</div>

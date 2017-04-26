@@ -1,0 +1,111 @@
+﻿<div class="row">
+    <div class="col-xs-12">
+        <form class="form"
+              ng-submit="form.$valid && post()"
+              method="post"
+              name="form"
+              novalidate
+              role="form">
+            <div class="form-body">
+                <div class="form-group"
+                     ng-class="{ 'has-error': form.$submitted && form.data.$invalid }">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label class="control-label">Data</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <date-picker format="dd/mm/yyyy">
+                                <input type="text"
+                                       class="form-control"
+                                       name="data"
+                                       ng-model="conta.data"
+                                       ng-mask="{ mask: 'dd/mm/yyyy' }"
+                                       required />
+                            </date-picker>
+                        </div>
+                        <div class="col-xs-8"
+                             ng-messages="form.data.$error"
+                             role="alert"
+                             ng-show="form.$submitted">
+                            <span class="help-block help-block-error"
+                                  ng-message="required">
+                            Este campo é obrigatório.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group"
+                     ng-class="{ 'has-error': form.$submitted && form.valor.$invalid }">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label class="control-label">Valor</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-dollar"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="valor"
+                                       ng-model="conta.valor"
+                                       ng-mask="{ mask: 'currency' }"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-xs-8"
+                             ng-messages="form.valor.$error"
+                             role="alert"
+                             ng-show="form.$submitted">
+                            <span class="help-block help-block-error"
+                                  ng-message="required">
+                                Este campo é obrigatório.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group"
+                     ng-class="{ 'has-error': form.$submitted && form.historico.$invalid }">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label class="control-label">Histórico</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <textarea cols="100"
+                                      rows="4"
+                                      class="form-control"
+                                      ng-model="conta.historico"
+                                      name="historico"
+                                      required>
+                            </textarea>
+                        </div>
+                        <div class="col-xs-8"
+                             ng-messages="form.historico.$error"
+                             role="alert"
+                             ng-show="form.$submitted">
+                            <span class="help-block help-block-error"
+                                  ng-message="required">
+                                Este campo é obrigatório.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit"
+                        class="btn blue">
+                    Criar
+                </button>
+                <button type="button"
+                        class="btn default"
+                        ui-sref="projects.contapagar({ projectId: $state.params.projectId })">
+                    Cancelar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
